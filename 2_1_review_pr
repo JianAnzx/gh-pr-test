@@ -1,20 +1,10 @@
 script='mutation {
-  revertPullRequest(
+  addPullRequestReview(
     input: {
       pullRequestId: \"PR_kwDOJW-w685ObNBP\"
       }
     ){
-      revertPullRequest {
-        id
-        additions
-        body
-        title
-        url
-      }
-      pullRequest {
-        id
-        url
-      }
+      clientMutationId
     }
 }'
 script="$(echo $script | tr -d '\n')"   # the query should be a one-liner, without newlines

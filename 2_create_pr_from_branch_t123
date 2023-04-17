@@ -2,7 +2,7 @@ script='mutation {
   createPullRequest(
     input: {
       baseRefName: \"main\",
-      headRefName: \"t123\",
+      headRefName: \"c1\",
       repositoryId: \"R_kgDOJW-w6w\",
       title: \"ql-test-pr\"
       }
