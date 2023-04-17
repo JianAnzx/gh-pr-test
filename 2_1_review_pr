@@ -1,7 +1,7 @@
 script='mutation {
   addPullRequestReview(
     input: {
-      pullRequestId: \"PR_kwDOJW-w685ObNBP\"
+      pullRequestId: \"PR_kwDOJW-w685Obj4N\"
       }
     ){
       clientMutationId
