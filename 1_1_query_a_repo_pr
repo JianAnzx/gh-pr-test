@@ -1,0 +1,21 @@
+script='query {
+  repository(name:\"gh-pr-test\" owner: \"JianANZx\") {
+    createdAt
+    pullRequests(first: 1, headRefName: \"jian-1\", states: OPEN) {
+      edges {
+      node {
+        id
+        title
+        url
+        author {
+          login
+         }
+        }
+      }
+    }
+  }
+}'
+script="$(echo $script | tr -d '\n')"   # the query should be a one-liner, without newlines
+curl -i -H 'Content-Type: application/json' \
+   -H "Authorization: bearer $TOKEN" \
+   -X POST -d "{ \"query\": \"$script\"}" https://api.github.com/graphql
