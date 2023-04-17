@@ -1,16 +1,15 @@
 script='mutation {
-  mergePullRequest(
+  submitPullRequestReview(
     input: {
-      pullRequestId: \"PR_kwDOJW-w685Obj4N\"
+      event: APPROVE,
+      pullRequestId: \"PR_kwDOJW-w685Obj4N\",
       }
     ){
-      actor {
-        login
-        url
-      }
-      pullRequest {
-        id
-        url
+      clientMutationId
+      pullRequestReview {
+        bodyText
+        body
+        state
       }
     }
 }'
