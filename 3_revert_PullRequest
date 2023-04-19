@@ -1,16 +1,18 @@
 script='mutation {
-  createPullRequest(
+  revertPullRequest(
     input: {
-      baseRefName: \"main\",
-      headRefName: \"t123\",
-      repositoryId: \"R_kgDOJW-w6w\",
-      title: \"ql-test-pr\"
+      pullRequestId: \"PR_kwDOJW-w685ObNBP\"
       }
     ){
-      pullRequest {
+      revertPullRequest {
+        id
         additions
         body
         title
+        url
+      }
+      pullRequest {
+        id
         url
       }
     }

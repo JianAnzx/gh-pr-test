@@ -1,0 +1,22 @@
+script='mutation {
+  createPullRequest(
+    input: {
+      baseRefName: \"main\",
+      headRefName: \"c1\",
+      repositoryId: \"R_kgDOJW-w6w\",
+      title: \"ql-test-pr\"
+      }
+    ){
+      pullRequest {
+        id
+        additions
+        body
+        title
+        url
+      }
+    }
+}'
+script="$(echo $script | tr -d '\n')"   # the query should be a one-liner, without newlines
+curl -i -H 'Content-Type: application/json' \
+   -H "Authorization: bearer $TOKEN" \
+   -X POST -d "{ \"query\": \"$script\"}" https://api.github.com/graphql
