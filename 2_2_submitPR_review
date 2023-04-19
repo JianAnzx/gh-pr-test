@@ -2,18 +2,15 @@ script='mutation {
   submitPullRequestReview(
     input: {
       event: APPROVE,
-      pullRequestId: \"PR_kwDOJW-w685Obj4N\",
+      pullRequestId: \"PR_kwDOJW-w685OiabE\",
       }
     ){
-      clientMutationId
       pullRequestReview {
-        bodyText
-        body
         state
       }
     }
 }'
 script="$(echo $script | tr -d '\n')"   # the query should be a one-liner, without newlines
 curl -i -H 'Content-Type: application/json' \
-   -H "Authorization: bearer $TOKEN" \
+   -H "Authorization: bearer $SECOND_TOKEN" \
    -X POST -d "{ \"query\": \"$script\"}" https://api.github.com/graphql

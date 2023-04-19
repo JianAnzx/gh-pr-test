@@ -1,15 +1,9 @@
 script='query {
   repository(name:\"gh-pr-test\" owner: \"JianANZx\") {
-    createdAt
-    pullRequests(first: 1, headRefName: \"jian-1\", states: OPEN) {
+    pullRequests(first: 10, headRefName: \"test-revert-branch\", states: OPEN) {
       edges {
       node {
         id
-        title
-        url
-        author {
-          login
-         }
         }
       }
     }
