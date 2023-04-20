@@ -1,1 +1,0 @@
-Door is open
